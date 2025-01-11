@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import ArraysOverview from "./components/data-structures/ArraysOverview";
 import ArraysPractice from "./components/data-structures/ArraysPractice";
+import LinkedListsOverview from "./components/data-structures/LinkedListsOverview";
 
 const HomePage = () => (
   <div className="max-w-4xl mx-auto bg-white p-8 shadow-lg rounded-lg">
@@ -28,6 +29,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/arrays/overview" element={<ArraysOverview />} />
             <Route path="/arrays/practice" element={<ArraysPractice />} />
+            <Route path="/linkedlists/overview" element={<LinkedListsOverview />} />
           </Routes>
         </main>
       </div>
