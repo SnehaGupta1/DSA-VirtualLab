@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const [openMenu, setOpenMenu] = useState(null); // For top-level menus
-  const [openSubMenu, setOpenSubMenu] = useState(null); // For nested sub-menus
+  const [openMenu, setOpenMenu] = useState(null);
+  const [openSubMenu, setOpenSubMenu] = useState(null);
 
   const toggleMenu = (menu) => {
     setOpenMenu(openMenu === menu ? null : menu);
-    setOpenSubMenu(null); // Close any open sub-menus when a top-level menu is toggled
+    setOpenSubMenu(null);
   };
 
   const toggleSubMenu = (submenu) => {
@@ -21,17 +21,15 @@ const Navbar = () => {
       </h1>
       <nav className="mt-4">
         <ul className="space-y-2">
-          {/* Introduction */}
           <li>
-            <Link
+            <NavLink
               to="/"
               className="block px-4 py-2 hover:bg-gray-700 hover:text-green-400 transition duration-200"
+              activeClassName="bg-gray-700 text-green-400"
             >
               Introduction
-            </Link>
+            </NavLink>
           </li>
-
-          {/* Data Structures */}
           <li>
             <button
               className="w-full text-left px-4 py-2 flex items-center justify-between hover:bg-gray-700 transition duration-200"
@@ -55,18 +53,20 @@ const Navbar = () => {
                   {openSubMenu === "arrays" && (
                     <ul className="ml-4 space-y-1 text-sm bg-gray-600 p-2 rounded">
                       <li>
-                        <Link
+                        <NavLink
                           to="/arrays/overview"
                           className="block px-4 py-2 hover:text-green-400 transition"
+                          activeClassName="text-green-400"
                         >
                           Overview
-                        </Link>
-                        <Link
+                        </NavLink>
+                        <NavLink
                           to="/arrays/practice"
                           className="block px-4 py-2 hover:text-green-400 transition"
+                          activeClassName="text-green-400"
                         >
                           Practice
-                        </Link>
+                        </NavLink>
                       </li>
                     </ul>
                   )}
@@ -84,20 +84,31 @@ const Navbar = () => {
                   {openSubMenu === "linkedLists" && (
                     <ul className="ml-4 space-y-1 text-sm bg-gray-600 p-2 rounded">
                       <li>
-                        <Link
+                        <NavLink
                           to="/linkedlists/overview"
                           className="block px-4 py-2 hover:text-green-400 transition"
+                          activeClassName="text-green-400"
                         >
                           Overview
-                        </Link>
+                        </NavLink>
                       </li>
                       <li>
-                        <Link
+                        <NavLink
                           to="/linkedlists/visualization"
                           className="block px-4 py-2 hover:text-green-400 transition"
+                          activeClassName="text-green-400"
                         >
                           Visualization
-                        </Link>
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/linkedlists/practice"
+                          className="block px-4 py-2 hover:text-green-400 transition"
+                          activeClassName="text-green-400"
+                        >
+                          Practice
+                        </NavLink>
                       </li>
                     </ul>
                   )}
@@ -105,8 +116,6 @@ const Navbar = () => {
               </ul>
             )}
           </li>
-
-          {/* Algorithms */}
           <li>
             <button
               className="w-full text-left px-4 py-2 flex items-center justify-between hover:bg-gray-700 transition duration-200"
@@ -118,20 +127,22 @@ const Navbar = () => {
             {openMenu === "algorithms" && (
               <ul className="ml-4 bg-gray-700 space-y-1 p-2 rounded">
                 <li>
-                  <Link
+                  <NavLink
                     to="/sorting"
                     className="block px-4 py-2 hover:bg-gray-600 hover:text-green-400 transition"
+                    activeClassName="text-green-400"
                   >
                     Sorting Algorithms
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link
+                  <NavLink
                     to="/searching"
                     className="block px-4 py-2 hover:bg-gray-600 hover:text-green-400 transition"
+                    activeClassName="text-green-400"
                   >
                     Searching Algorithms
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             )}
