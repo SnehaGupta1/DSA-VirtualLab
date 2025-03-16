@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import ArraysOverview from "./components/data-structures/ArraysOverview";
 import ArraysPractice from "./components/data-structures/ArraysPractice";
 import LinkedListsOverview from "./components/data-structures/LinkedListsOverview";
+import LinkedListsVisualization from "./components/data-structures/LinkedListsVisualization";
 
 const HomePage = () => (
   <div className="max-w-4xl mx-auto bg-white p-8 shadow-lg rounded-lg">
@@ -30,6 +31,7 @@ function App() {
             <Route path="/arrays/overview" element={<ArraysOverview />} />
             <Route path="/arrays/practice" element={<ArraysPractice />} />
             <Route path="/linkedlists/overview" element={<LinkedListsOverview />} />
+            <Route path="/linkedlists/visualization" element={<LinkedListsVisualization />} />
           </Routes>
         </main>
       </div>

@@ -93,10 +93,10 @@ const Navbar = () => {
                       </li>
                       <li>
                         <Link
-                          to="/linkedlists/practice"
+                          to="/linkedlists/visualization"
                           className="block px-4 py-2 hover:text-green-400 transition"
                         >
-                          Practice
+                          Visualization
                         </Link>
                       </li>
                     </ul>
